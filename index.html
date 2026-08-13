@@ -1,1 +1,527 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- ================= SEO OPTIMIZED ================= -->
+  <title>Kabar Bangsa — Portal Berita Terkini, Terpercaya & Terlengkap</title>
+  <meta name="description" content="Portal berita terkini dan terpercaya. Update terbaru politik, ekonomi, teknologi, olahraga, dan hiburan disajikan cepat, akurat, dan nyaman dibaca.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://www.kabarbangsa.com/">
+  <meta name="author" content="Redaksi Kabar Bangsa">
+
+  <!-- Open Graph & Twitter Card -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kabar Bangsa">
+  <meta property="og:title" content="Kabar Bangsa — Portal Berita Terkini & Terpercaya">
+  <meta property="og:description" content="Update berita terbaru, terpopuler, dan terpercaya setiap hari.">
+  <meta property="og:url" content="https://www.kabarbangsa.com/">
+  <meta property="og:image" content="https://www.kabarbangsa.com/assets/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- THEME-COLOR STATUS BAR (MOBILE) -->
+  <meta name="theme-color" id="themeColor" content="#101418">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23a31226'/><text x='50' y='68' font-size='55' text-anchor='middle' fill='white' font-family='Georgia' font-weight='bold'>K</text></svg>">
+
+  <!-- ============ PERFECTLY STRUCTURED DATA (JSON-LD) ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "NewsMediaOrganization",
+        "name": "Kabar Bangsa",
+        "url": "https://www.kabarbangsa.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.kabarbangsa.com/assets/logo.png"
+        },
+        "sameAs": [
+          "https://www.facebook.com/kabarbangsa",
+          "https://www.instagram.com/kabarbangsa",
+          "https://twitter.com/kabarbangsa",
+          "https://www.youtube.com/kabarbangsa"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "name": "Kabar Bangsa",
+        "url": "https://www.kabarbangsa.com/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.kabarbangsa.com/pencarian?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Font: kombinasi serif (berkelas) + sans-serif (nyaman dibaca) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============ RESET & VARIABEL TEMA ============ */
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --bg:#f7f6f3; --surface:#ffffff; --text:#16181d; --muted:#68707d;
+      --accent:#a31226; --accent-soft:#fdebec; --border:#e7e4de;
+      --header:#101418; --ticker:#a31226; --gold:#c9a24b;
+      --shadow:0 1px 3px rgba(0,0,0,.08); --radius:12px;
+    }
+    /* DARK MODE — otomatis mengikuti sistem HP, bisa juga manual */
+    html[data-theme="dark"]{
+      --bg:#0e1116; --surface:#151a21; --text:#e8eaed; --muted:#9aa3af;
+      --accent:#ff5d6c; --accent-soft:#2a1416; --border:#232a33;
+      --header:#0a0d11; --ticker:#8b0f22;
+      --shadow:0 1px 3px rgba(0,0,0,.45);
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+    img{max-width:100%}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .serif{font-family:'Lora',Georgia,'Times New Roman',serif}
+
+    /* ============ TOPBAR (WAKTU WITA REAL-TIME) ============ */
+    .topbar{background:var(--header);color:#aab4bf;font-size:13px}
+    .topbar .container{display:flex;justify-content:space-between;align-items:center;height:36px}
+    .topbar a{color:#aab4bf;margin-left:14px}
+    .topbar a:hover{color:#fff}
+    #witaClock{font-weight:600;color:#dfe3e8}
+
+    /* ============ MASTHEAD ============ */
+    .masthead{background:var(--surface);border-bottom:1px solid var(--border)}
+    .masthead .container{display:flex;align-items:center;justify-content:space-between;padding-top:22px;padding-bottom:22px;gap:20px}
+    .logo{font-family:'Lora',Georgia,serif;font-size:34px;font-weight:700;letter-spacing:-.02em;color:var(--text);white-space:nowrap}
+    .logo b{color:var(--accent)}
+    .masthead .ad-slot{flex:1;max-width:468px}
+
+    /* ============ STICKY NAVBAR ============ */
+    .navbar{position:-webkit-sticky;position:sticky;top:0;z-index:100;background:var(--header);box-shadow:0 2px 10px rgba(0,0,0,.25)}
+    .navbar .container{display:flex;align-items:center;justify-content:space-between;position:relative}
+    .nav-menu{display:flex;gap:2px}
+    .nav-menu a{display:block;padding:15px 13px;color:#dfe3e8;font-size:13.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+    .nav-menu a:hover,.nav-menu a.active{color:#fff;box-shadow:inset 0 -3px 0 var(--accent)}
+    .nav-tools{display:flex;align-items:center;gap:8px}
+    .icon-btn{background:rgba(255,255,255,.08);border:0;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;line-height:1}
+    .icon-btn:hover{background:rgba(255,255,255,.18)}
+    .burger{display:none}
+    @media(max-width:880px){
+      .burger{display:block}
+      .nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--header);flex-direction:column;padding:6px 20px 14px;border-top:1px solid rgba(255,255,255,.08)}
+      .nav-menu.open{display:flex}
+      .nav-menu a{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.06);box-shadow:none}
+    }
+
+    /* ============ LATEST NEWS RUNNING TEXT ============ */
+    .ticker{background:var(--ticker);color:#fff;display:flex;align-items:stretch;overflow:hidden}
+    .ticker-label{background:rgba(0,0,0,.28);font-weight:800;font-size:12px;letter-spacing:.12em;padding:9px 14px;white-space:nowrap;display:flex;align-items:center}
+    .ticker-wrap{overflow:hidden;flex:1}
+    .ticker-track{display:inline-flex;white-space:nowrap;animation:tickerMove 45s linear infinite;padding:9px 0}
+    .ticker-wrap:hover .ticker-track{animation-play-state:paused}
+    .ticker-track a{color:#fff;font-size:13.5px;font-weight:600;margin-right:34px}
+    .ticker-track a::before{content:"•";margin-right:10px;opacity:.6}
+    @keyframes tickerMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    /* ============ SLOT IKLAN (ADSENSE READY) ============ */
+    .ad-slot{border:1px dashed var(--border);background:var(--surface);display:flex;align-items:center;justify-content:center;min-height:90px;color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase;border-radius:8px;margin:20px auto;text-align:center}
+    .ad-leaderboard{max-width:728px;min-height:90px}
+    .ad-box{min-height:250px}
+
+    /* ============ HERO ============ */
+    .hero{display:grid;grid-template-columns:1.65fr 1fr;gap:16px;margin-top:22px}
+    .thumb{position:relative;height:0;padding-bottom:56.25%;overflow:hidden;background:#d8d5cf;border-radius:var(--radius)} /* AUTO RESIZE: rasio 16:9 selalu rapi */
+    .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}
+    a:hover .thumb img{transform:scale(1.05)}
+    .hero-main{position:relative;border-radius:var(--radius);overflow:hidden;min-height:430px;display:block}
+    .hero-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .hero-main .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.88))}
+    .hero-text{position:absolute;left:0;right:0;bottom:0;padding:26px;color:#fff}
+    .hero-text h1,.hero-text h2{font-family:'Lora',Georgia,serif;font-size:28px;line-height:1.3;margin:8px 0 10px}
+    .hero-side{display:flex;flex-direction:column;gap:16px}
+    .hero-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .hero-card .body{padding:14px 16px 16px}
+    .hero-card h3{font-family:'Lora',Georgia,serif;font-size:17px;line-height:1.4;margin:6px 0}
+    .cat{color:var(--accent);font-weight:800;font-size:11.5px;text-transform:uppercase;letter-spacing:.1em}
+    .meta{font-size:12.5px;color:var(--muted)}
+    @media(max-width:880px){.hero{grid-template-columns:1fr}.hero-main{min-height:340px}.hero-text h1{font-size:22px}}
+
+    /* ============ LAYOUT UTAMA + STICKY SIDEBAR ============ */
+    .layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:30px;margin-top:34px}
+    @media(max-width:960px){.layout{grid-template-columns:1fr}}
+    .sec-title{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
+    .sec-title::before{content:"";width:22px;height:3px;background:var(--accent)}
+    .sec-title a{margin-left:auto;font-size:12px;color:var(--accent);letter-spacing:0;text-transform:none;font-weight:700}
+
+    .news-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--border)}
+    .news-item .thumb{flex:0 0 230px;padding-bottom:0;height:145px;border-radius:10px}
+    .news-item h3{font-family:'Lora',Georgia,serif;font-size:19px;line-height:1.4;margin:6px 0}
+    .news-item h3 a:hover,.hero-card h3 a:hover,.hero-text h1 a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+    .news-item h3 a:hover{color:var(--accent)}
+    .news-item p{font-size:14.5px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    @media(max-width:600px){
+      .news-item{flex-direction:column;gap:12px}
+      .news-item .thumb{flex:none;width:100%;height:0;padding-bottom:56.25%}
+    }
+
+    /* Sidebar */
+    .widget{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);margin-bottom:22px}
+    .sidebar-inner{position:-webkit-sticky;position:sticky;top:66px}
+    .pop-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--border)}
+    .pop-item:last-child{border-bottom:0;padding-bottom:0}
+    .pop-num{font-family:'Lora',Georgia,serif;font-size:26px;font-weight:700;color:var(--accent);line-height:1;min-width:26px}
+    .pop-item h4{font-size:14.5px;line-height:1.45;font-weight:600}
+    .pop-item h4 a:hover{color:var(--accent)}
+    .pop-item .meta{margin-top:4px;display:block}
+
+    /* ============ BACA JUGA ============ */
+    .baca-juga{margin-top:38px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+    .chips a{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:12.5px;font-weight:700;color:var(--muted)}
+    .chips a:hover{border-color:var(--accent);color:var(--accent)}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    @media(max-width:960px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.grid-4{grid-template-columns:1fr}}
+    .mini-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .mini-card .thumb{border-radius:0}
+    .mini-card .body{padding:12px 14px 14px}
+    .mini-card h4{font-size:14.5px;line-height:1.45;font-weight:700;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .mini-card h4 a:hover{color:var(--accent)}
+
+    /* ============ FOOTER + SOSIAL MEDIA ============ */
+    footer{background:var(--header);color:#aab4bf;margin-top:50px}
+    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:30px;padding:44px 0}
+    @media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
+    footer h5{color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+    footer .logo{color:#fff;font-size:26px}
+    footer p{font-size:14px;line-height:1.7}
+    footer ul li{margin-bottom:9px}
+    footer ul a{font-size:14px}
+    footer ul a:hover{color:#fff}
+    .social{display:flex;gap:10px;margin-top:6px}
+    .social a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#dfe3e8;transition:.25s}
+    .social a:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
+    .social svg{width:17px;height:17px}
+    .foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding:16px 0;font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  </style>
+</head>
+<body>
+
+  <!-- ===== TOPBAR: WAKTU WITA REAL-TIME ===== -->
+  <div class="topbar">
+    <div class="container">
+      <span id="witaClock">Memuat waktu…</span>
+      <nav>
+        <a href="#">Redaksi</a><a href="#">Kontak</a><a href="#">Pedoman Media Siber</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ===== MASTHEAD ===== -->
+  <header class="masthead">
+    <div class="container">
+      <a href="index.html" class="logo">Kabar<b>Bangsa</b></a>
+      <!-- GOOGLE ADSENSE: Leaderboard 728x90 — tempel kode iklan di sini -->
+      <div class="ad-slot ad-leaderboard">Iklan · AdSense Ready (728×90)</div>
+    </div>
+  </header>
+
+  <!-- ===== STICKY NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="container">
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#">Nasional</a></li>
+        <li><a href="#">Politik</a></li>
+        <li><a href="#">Ekonomi</a></li>
+        <li><a href="#">Teknologi</a></li>
+        <li><a href="#">Olahraga</a></li>
+        <li><a href="#">Hiburan</a></li>
+        <li><a href="populer.html">Terpopuler</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button class="icon-btn" id="darkToggle" aria-label="Mode gelap" title="Mode Gelap">🌙</button>
+        <button class="icon-btn burger" id="burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== LATEST NEWS RUNNING TEXT ===== -->
+  <div class="ticker">
+    <div class="ticker-label">⚡ TERKINI</div>
+    <div class="ticker-wrap">
+      <div class="ticker-track">
+        <a href="#">Rupiah menguat ke level Rp15.800 terhadap dolar AS</a>
+        <a href="#">Timnas U-23 lolos ke final usai drama adu penalti</a>
+        <a href="#">Pembangunan fase kedua IKN resmi dimulai</a>
+        <a href="#">BMKG prediksi hujan lebat di 12 wilayah hari ini</a>
+        <a href="#">Harga emas hari ini cetak rekor baru</a>
+        <!-- Duplikasi untuk loop mulus -->
+        <a href="#">Rupiah menguat ke level Rp15.800 terhadap dolar AS</a>
+        <a href="#">Timnas U-23 lolos ke final usai drama adu penalti</a>
+        <a href="#">Pembangunan fase kedua IKN resmi dimulai</a>
+        <a href="#">BMKG prediksi hujan lebat di 12 wilayah hari ini</a>
+        <a href="#">Harga emas hari ini cetak rekor baru</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <!-- ===== HERO / HEADLINE ===== -->
+    <section class="hero">
+      <a href="artikel.html" class="hero-main">
+        <img src="https://picsum.photos/seed/headline/1200/675" alt="UMKM go digital" fetchpriority="high">
+        <div class="overlay"></div>
+        <div class="hero-text">
+          <span class="cat" style="color:#ffd7dc">Ekonomi</span>
+          <h1>Transformasi Digital UMKM Tembus Pasar Global, Pemerintah Siapkan Insentif Baru</h1>
+          <span class="meta" style="color:#cfd6dd">Oleh Redaksi · <time class="timeago" datetime="2026-08-13T07:10:00+08:00">13 Agustus 2026, 07:10 WITA</time></span>
+        </div>
+      </a>
+      <div class="hero-side">
+        <a href="#" class="hero-card">
+          <div class="thumb"><img src="https://picsum.photos/seed/bola/600/338" alt="Timnas U-23" loading="lazy"></div>
+          <div class="body">
+            <span class="cat">Olahraga</span>
+            <h3>Timnas U-23 Lolos ke Final Usai Drama Adu Penalti</h3>
+            <span class="meta"><time class="timeago" datetime="2026-08-13T08:40:00+08:00">13 Agustus 2026, 08:40 WITA</time></span>
+          </div>
+        </a>
+        <a href="#" class="hero-card">
+          <div class="thumb"><img src="https://picsum.photos/seed/wisata/600/338" alt="Labuan Bajo" loading="lazy"></div>
+          <div class="body">
+            <span class="cat">Pariwisata</span>
+            <h3>Wisata Labuan Bajo Catat Rekor Kunjungan Tertinggi</h3>
+            <span class="meta"><time class="timeago" datetime="2026-08-12T21:05:00+08:00">12 Agustus 2026, 21:05 WITA</time></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- GOOGLE ADSENSE: Responsive in-content -->
+    <div class="ad-slot">Iklan · AdSense Ready (Responsive)</div>
+
+    <!-- ===== KONTEN UTAMA + SIDEBAR ===== -->
+    <div class="layout">
+      <section>
+        <h2 class="sec-title">Berita Terkini <a href="#">Lihat semua →</a></h2>
+
+        <article class="news-item">
+          <a href="#" class="thumb"><img src="https://picsum.photos/seed/tani/600/338" alt="AI untuk petani" loading="lazy"></a>
+          <div>
+            <span class="cat">Teknologi</span>
+            <h3><a href="#">Startup Lokal Luncurkan Platform AI untuk Petani, Produktivitas Naik 30%</a></h3>
+            <p>Teknologi kecerdasan buatan membantu petani memantau kondisi lahan, cuaca, dan jadwal tanam secara real-time langsung dari ponsel.</p>
+            <span class="meta"><time class="timeago" datetime="2026-08-13T08:55:00+08:00">13 Agustus 2026, 08:55 WITA</time></span>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <a href="#" class="thumb"><img src="https://picsum.photos/seed/ikn/600/338" alt="Pembangunan IKN" loading="lazy"></a>
+          <div>
+            <span class="cat">Nasional</span>
+            <h3><a href="#">Pembangunan Fase Kedua IKN Dimulai, Fokus pada Transportasi Publik</a></h3>
+            <p>Pemerintah menargetkan jaringan transportasi publik ramah lingkungan beroperasi penuh pada akhir tahun depan.</p>
+            <span class="meta"><time class="timeago" datetime="2026-08-13T06:30:00+08:00">13 Agustus 2026, 06:30 WITA</time></span>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <a href="#" class="thumb"><img src="https://picsum.photos/seed/rupiah/600/338" alt="Rupiah menguat" loading="lazy"></a>
+          <div>
+            <span class="cat">Ekonomi</span>
+            <h3><a href="#">Rupiah Menguat ke Level Rp15.800, Analis Sebut Efek Data Inflasi</a></h3>
+            <p>Penguatan rupiah didorong data inflasi yang lebih rendah dari perkiraan serta masuknya aliran modal asing.</p>
+            <span class="meta"><time class="timeago" datetime="2026-08-12T22:15:00+08:00">12 Agustus 2026, 22:15 WITA</time></span>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <a href="#" class="thumb"><img src="https://picsum.photos/seed/ktt/600/338" alt="KTT Asia" loading="lazy"></a>
+          <div>
+            <span class="cat">Internasional</span>
+            <h3><a href="#">KTT Asia Bahas Kerja Sama Energi Terbarukan Lintas Negara</a></h3>
+            <p>Para pemimpin negara sepakat membentuk dana bersama untuk percepatan transisi energi hijau di kawasan.</p>
+            <span class="meta"><time class="timeago" datetime="2026-08-12T18:00:00+08:00">12 Agustus 2026, 18:00 WITA</time></span>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <a href="#" class="thumb"><img src="https://picsum.photos/seed/film/600/338" alt="Festival film" loading="lazy"></a>
+          <div>
+            <span class="cat">Hiburan</span>
+            <h3><a href="#">Festival Film Nusantara Umumkan Daftar Nominasi Tahun Ini</a></h3>
+            <p>Sejumlah film independen pendatang baru mendominasi nominasi dan mengejutkan para pengamat perfilman.</p>
+            <span class="meta"><time class="timeago" datetime="2026-08-11T20:40:00+08:00">11 Agustus 2026, 20:40 WITA</time></span>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <a href="#" class="thumb"><img src="https://picsum.photos/seed/sehat/600/338" alt="Cek kesehatan gratis" loading="lazy"></a>
+          <div>
+            <span class="cat">Kesehatan</span>
+            <h3><a href="#">Kampanye Cek Kesehatan Gratis Jangkau 2 Juta Warga</a></h3>
+            <p>Program pemeriksaan kesehatan gratis diperluas ke daerah terpencil dengan dukungan ribuan tenaga medis.</p>
+            <span class="meta"><time class="timeago" datetime="2026-08-11T09:20:00+08:00">11 Agustus 2026, 09:20 WITA</time></span>
+          </div>
+        </article>
+
+        <!-- GOOGLE ADSENSE: in-article -->
+        <div class="ad-slot">Iklan · AdSense Ready (In-Article)</div>
+      </section>
+
+      <!-- ===== SIDEBAR STICKY ===== -->
+      <aside>
+        <div class="sidebar-inner">
+          <!-- SPECIAL PAGE FOR POPULAR NEWS: widget ringkas + link halaman khusus -->
+          <div class="widget">
+            <h2 class="sec-title">🔥 Terpopuler <a href="populer.html">Halaman khusus →</a></h2>
+            <div class="pop-item"><span class="pop-num">1</span><div><h4><a href="#">Cara Daftar Bantuan Subsidi Upah 2026, Cukup Lewat HP</a></h4><span class="meta">128.4 rb dibaca</span></div></div>
+            <div class="pop-item"><span class="pop-num">2</span><div><h4><a href="#">Jadwal Lengkap Liga Nusantara Pekan Ini</a></h4><span class="meta">96.1 rb dibaca</span></div></div>
+            <div class="pop-item"><span class="pop-num">3</span><div><h4><a href="#">Update Cuaca: BMKG Prediksi Hujan Lebat di 12 Wilayah</a></h4><span class="meta">87.3 rb dibaca</span></div></div>
+            <div class="pop-item"><span class="pop-num">4</span><div><h4><a href="#">Harga Emas Hari Ini Tembus Rekor Baru</a></h4><span class="meta">74.9 rb dibaca</span></div></div>
+            <div class="pop-item"><span class="pop-num">5</span><div><h4><a href="#">Resep Viral Kopi Susu Gula Aren ala Kafe Lokal</a></h4><span class="meta">61.2 rb dibaca</span></div></div>
+          </div>
+
+          <!-- GOOGLE ADSENSE: Medium Rectangle 300x250 -->
+          <div class="widget"><div class="ad-slot ad-box" style="margin:0">Iklan · 300×250</div></div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ===== BACA JUGA (REKOMENDASI ARTIKEL) ===== -->
+    <section class="baca-juga">
+      <h2 class="sec-title">Baca Juga</h2>
+      <div class="chips">
+        <a href="#">#IKN</a><a href="#">#EkonomiDigital</a><a href="#">#TimnasDay</a><a href="#">#HargaEmas</a><a href="#">#KulinerViral</a>
+      </div>
+      <div class="grid-4">
+        <a href="#" class="mini-card"><div class="thumb"><img src="https://picsum.photos/seed/bj1/600/338" alt="" loading="lazy"></div><div class="body"><span class="cat">Ekonomi</span><h4>Investasi Hijau Jadi Magnet Baru Modal Asing di Asia Tenggara</h4><span class="meta"><time class="timeago" datetime="2026-08-12T14:00:00+08:00">12 Agustus 2026</time></span></div></a>
+        <a href="#" class="mini-card"><div class="thumb"><img src="https://picsum.photos/seed/bj2/600/338" alt="" loading="lazy"></div><div class="body"><span class="cat">Teknologi</span><h4>5 Aplikasi Lokal yang Wajib Dimiliki Pelaku UMKM</h4><span class="meta"><time class="timeago" datetime="2026-08-12T10:30:00+08:00">12 Agustus 2026</time></span></div></a>
+        <a href="#" class="mini-card"><div class="thumb"><img src="https://picsum.photos/seed/bj3/600/338" alt="" loading="lazy"></div><div class="body"><span class="cat">Olahraga</span><h4>Profil Sang Kapten Muda yang Bawa Timnas ke Final</h4><span class="meta"><time class="timeago" datetime="2026-08-13T05:45:00+08:00">13 Agustus 2026</time></span></div></a>
+        <a href="#" class="mini-card"><div class="thumb"><img src="https://picsum.photos/seed/bj4/600/338" alt="" loading="lazy"></div><div class="body"><span class="cat">Gaya Hidup</span><h4>Tren Wisata Slow Travel Mulai Digemari Generasi Muda</h4><span class="meta"><time class="timeago" datetime="2026-08-11T16:20:00+08:00">11 Agustus 2026</time></span></div></a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FACEBOOK COMMENTS — tempatkan di HALAMAN ARTIKEL.
+         Ganti YOUR_APP_ID dan URL artikel.
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+      src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v19.0&appId=YOUR_APP_ID"></script>
+    <div class="fb-comments" data-href="https://www.kabarbangsa.com/artikel.html"
+         data-width="100%" data-numposts="5"></div>
+    ============================================================ -->
+  </main>
+
+  <!-- ===== FOOTER + SOSIAL MEDIA ICON ===== -->
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div>
+          <a href="index.html" class="logo">Kabar<b>Bangsa</b></a>
+          <p style="margin-top:12px">Portal berita terkini yang menyajikan informasi cepat, akurat, dan berimbang untuk pembaca Indonesia. Terbit setiap hari, kapan pun Anda membutuhkan kabar.</p>
+        </div>
+        <div>
+          <h5>Kategori</h5>
+          <ul>
+            <li><a href="#">Nasional</a></li><li><a href="#">Ekonomi</a></li>
+            <li><a href="#">Teknologi</a></li><li><a href="#">Olahraga</a></li><li><a href="#">Hiburan</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Halaman</h5>
+          <ul>
+            <li><a href="populer.html">Berita Terpopuler</a></li>
+            <li><a href="#">Tentang Kami</a></li><li><a href="#">Redaksi</a></li>
+            <li><a href="#">Kebijakan Privasi</a></li><li><a href="#">Pasang Iklan</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Ikuti Kami</h5>
+          <div class="social">
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Twitter/X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Kabar Bangsa. Seluruh hak cipta dilindungi.</span>
+        <span>Waktu server: WITA (GMT+8) · Semua fitur berjalan otomatis</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ JAVASCRIPT: SEMUA OTOMATIS ============ -->
+  <script>
+  (function(){
+    var root = document.documentElement;
+
+    /* --- DARK MODE: otomatis ikut sistem HP + tombol manual --- */
+    var saved = null;
+    try { saved = localStorage.getItem('kb-theme'); } catch(e){}
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === 'dark' || (!saved && prefersDark)) root.setAttribute('data-theme','dark');
+
+    var btn = document.getElementById('darkToggle');
+    function syncUI(){
+      var dark = root.getAttribute('data-theme') === 'dark';
+      var m = document.getElementById('themeColor');
+      if (m) m.content = dark ? '#0a0d11' : '#101418'; // THEME-COLOR STATUS BAR
+      if (btn) btn.innerHTML = dark ? '☀️' : '🌙';
+    }
+    syncUI();
+    if (btn) btn.addEventListener('click', function(){
+      var dark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', dark ? 'light' : 'dark');
+      try { localStorage.setItem('kb-theme', dark ? 'light' : 'dark'); } catch(e){}
+      syncUI();
+    });
+
+    /* --- JAM WITA REAL-TIME --- */
+    var clockEl = document.getElementById('witaClock');
+    function tick(){
+      if (!clockEl) return;
+      try {
+        var now = new Date();
+        var d = new Intl.DateTimeFormat('id-ID',{timeZone:'Asia/Makassar',weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(now);
+        var t = new Intl.DateTimeFormat('id-ID',{timeZone:'Asia/Makassar',hour:'2-digit',minute:'2-digit'}).format(now);
+        clockEl.textContent = d + ' • ' + t.replace('.',':') + ' WITA';
+      } catch(e){ clockEl.textContent = new Date().toLocaleString('id-ID'); }
+    }
+    tick(); setInterval(tick, 30000);
+
+    /* --- TIME AGO FORMAT (mis. "2 jam yang lalu") --- */
+    function timeAgo(iso){
+      var then = new Date(iso), diff = Math.floor((Date.now() - then.getTime()) / 1000);
+      if (diff < 60) return 'Baru saja';
+      var units = [['tahun',31536000],['bulan',2592000],['minggu',604800],['hari',86400],['jam',3600],['menit',60]];
+      for (var i = 0; i < units.length; i++){
+        var n = Math.floor(diff / units[i][1]);
+        if (n >= 1) return n + ' ' + units[i][0] + ' yang lalu';
+      }
+      return 'Baru saja';
+    }
+    var times = document.querySelectorAll('time.timeago');
+    for (var i = 0; i < times.length; i++){
+      var dt = times[i].getAttribute('datetime');
+      if (dt){ times[i].title = new Date(dt).toLocaleString('id-ID'); times[i].textContent = timeAgo(dt); }
+    }
+
+    /* --- MENU MOBILE --- */
+    var burger = document.getElementById('burger'), nav = document.getElementById('navMenu');
+    if (burger && nav) burger.addEventListener('click', function(){ nav.classList.toggle('open'); });
+  })();
+  </script>
+</body>
+</html>
