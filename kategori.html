@@ -1,1 +1,448 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- ================= SEO: HALAMAN KATEGORI ================= -->
+  <title>Berita Ekonomi Terbaru — Kabar Bangsa</title>
+  <meta name="description" content="Kumpulan berita ekonomi terbaru dan terpercaya. Update pasar, bisnis, UMKM, dan kebijakan ekonomi Indonesia.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.kabarbangsa.com/kategori/ekonomi">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kabar Bangsa">
+  <meta property="og:title" content="Berita Ekonomi Terbaru — Kabar Bangsa">
+  <meta property="og:description" content="Kumpulan berita ekonomi terbaru dan terpercaya.">
+  <meta property="og:url" content="https://www.kabarbangsa.com/kategori/ekonomi">
+  <meta name="theme-color" id="themeColor" content="#101418">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23a31226'/><text x='50' y='68' font-size='55' text-anchor='middle' fill='white' font-family='Georgia' font-weight='bold'>K</text></svg>">
+
+  <!-- Structured Data: CollectionPage + Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Berita Ekonomi",
+    "description": "Kumpulan berita ekonomi terbaru dan terpercaya.",
+    "url": "https://www.kabarbangsa.com/kategori/ekonomi",
+    "publisher": {
+      "@type": "NewsMediaOrganization",
+      "name": "Kabar Bangsa",
+      "url": "https://www.kabarbangsa.com/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.kabarbangsa.com/"},
+      {"@type":"ListItem","position":2,"name":"Ekonomi","item":"https://www.kabarbangsa.com/kategori/ekonomi"}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --bg:#f7f6f3; --surface:#ffffff; --text:#16181d; --muted:#68707d;
+      --accent:#a31226; --accent-soft:#fdebec; --border:#e7e4de;
+      --header:#101418; --gold:#c9a24b;
+      --shadow:0 1px 3px rgba(0,0,0,.08); --radius:12px;
+    }
+    html[data-theme="dark"]{
+      --bg:#0e1116; --surface:#151a21; --text:#e8eaed; --muted:#9aa3af;
+      --accent:#ff5d6c; --accent-soft:#2a1416; --border:#232a33;
+      --header:#0a0d11; --shadow:0 1px 3px rgba(0,0,0,.45);
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+    img{max-width:100%}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+
+    /* TOPBAR */
+    .topbar{background:var(--header);color:#aab4bf;font-size:13px}
+    .topbar .container{display:flex;justify-content:space-between;align-items:center;height:36px}
+    .topbar a{color:#aab4bf;margin-left:14px}
+    .topbar a:hover{color:#fff}
+    #witaClock{font-weight:600;color:#dfe3e8}
+
+    /* MASTHEAD */
+    .masthead{background:var(--surface);border-bottom:1px solid var(--border)}
+    .masthead .container{display:flex;align-items:center;justify-content:space-between;padding-top:20px;padding-bottom:20px;gap:20px}
+    .logo{font-family:'Lora',Georgia,serif;font-size:30px;font-weight:700;letter-spacing:-.02em;color:var(--text);white-space:nowrap}
+    .logo b{color:var(--accent)}
+    .masthead .ad-slot{flex:1;max-width:468px}
+
+    /* STICKY NAVBAR */
+    .navbar{position:-webkit-sticky;position:sticky;top:0;z-index:100;background:var(--header);box-shadow:0 2px 10px rgba(0,0,0,.25)}
+    .navbar .container{display:flex;align-items:center;justify-content:space-between;position:relative}
+    .nav-menu{display:flex;gap:2px}
+    .nav-menu a{display:block;padding:15px 13px;color:#dfe3e8;font-size:13.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+    .nav-menu a:hover,.nav-menu a.active{color:#fff;box-shadow:inset 0 -3px 0 var(--accent)}
+    .nav-tools{display:flex;align-items:center;gap:8px}
+    .icon-btn{background:rgba(255,255,255,.08);border:0;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;line-height:1;display:flex;align-items:center;justify-content:center}
+    .icon-btn:hover{background:rgba(255,255,255,.18)}
+    .burger{display:none}
+    @media(max-width:880px){
+      .burger{display:flex}
+      .nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--header);flex-direction:column;padding:6px 20px 14px;border-top:1px solid rgba(255,255,255,.08)}
+      .nav-menu.open{display:flex}
+      .nav-menu a{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.06);box-shadow:none}
+    }
+
+    /* IKLAN */
+    .ad-slot{border:1px dashed var(--border);background:var(--surface);display:flex;align-items:center;justify-content:center;min-height:90px;color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase;border-radius:8px;margin:20px auto;text-align:center}
+    .ad-leaderboard{max-width:728px;min-height:90px}
+
+    /* BREADCRUMB */
+    .breadcrumb{font-size:13.5px;color:var(--muted);padding:18px 0;display:flex;flex-wrap:wrap;gap:6px}
+    .breadcrumb a:hover{color:var(--accent)}
+    .breadcrumb .sep{opacity:.5}
+
+    /* HEADER KATEGORI */
+    .cat-header{margin:10px 0 24px;padding-bottom:20px;border-bottom:2px solid var(--accent)}
+    .cat-header h1{font-family:'Lora',Georgia,serif;font-size:36px;display:flex;align-items:center;gap:12px}
+    .cat-header p{color:var(--muted);margin-top:6px;font-size:15px}
+    @media(max-width:600px){.cat-header h1{font-size:28px}}
+
+    /* LAYOUT */
+    .layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:30px;margin-bottom:40px}
+    @media(max-width:960px){.layout{grid-template-columns:1fr}}
+
+    /* NEWS ITEM */
+    .news-item{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--border)}
+    .news-item:first-child{padding-top:0}
+    .news-item .thumb{flex:0 0 260px;position:relative;height:0;padding-bottom:0;height:165px;overflow:hidden;border-radius:10px;background:#d8d5cf}
+    .news-item .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+    .news-item:hover .thumb img{transform:scale(1.05)}
+    .cat-label{color:var(--accent);font-weight:800;font-size:11.5px;text-transform:uppercase;letter-spacing:.1em}
+    .news-item h3{font-family:'Lora',Georgia,serif;font-size:20px;line-height:1.4;margin:6px 0}
+    .news-item h3 a:hover{color:var(--accent)}
+    .news-item p{font-size:14.5px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:8px}
+    .meta{font-size:12.5px;color:var(--muted)}
+    @media(max-width:600px){
+      .news-item{flex-direction:column;gap:12px}
+      .news-item .thumb{flex:none;width:100%;height:0;padding-bottom:56.25%}
+    }
+
+    /* PAGINATION */
+    .pagination{display:flex;justify-content:center;gap:8px;margin:34px 0;flex-wrap:wrap}
+    .pagination a,.pagination span{min-width:42px;height:42px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:8px;font-weight:700;font-size:14px;background:var(--surface);transition:.2s;padding:0 12px}
+    .pagination a:hover{border-color:var(--accent);color:var(--accent)}
+    .pagination .current{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .pagination .dots{border:0;background:transparent;pointer-events:none}
+
+    /* SIDEBAR */
+    .sidebar-inner{position:-webkit-sticky;position:sticky;top:66px}
+    .widget{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);margin-bottom:22px}
+    .sec-title{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
+    .sec-title::before{content:"";width:22px;height:3px;background:var(--accent)}
+    .sec-title a{margin-left:auto;font-size:12px;color:var(--accent);letter-spacing:0;text-transform:none;font-weight:700}
+
+    /* KATEGORI LAIN */
+    .cat-list li{margin-bottom:10px}
+    .cat-list a{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--bg);border-radius:8px;font-weight:600;font-size:14px;transition:.2s}
+    .cat-list a:hover{background:var(--accent-soft);color:var(--accent)}
+    .cat-list .count{background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:2px 8px;border-radius:99px}
+
+    /* TERPOPULER */
+    .pop-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--border)}
+    .pop-item:last-child{border-bottom:0;padding-bottom:0}
+    .pop-num{font-family:'Lora',Georgia,serif;font-size:26px;font-weight:700;color:var(--accent);line-height:1;min-width:26px}
+    .pop-item h4{font-size:14.5px;line-height:1.45;font-weight:600}
+    .pop-item h4 a:hover{color:var(--accent)}
+    .ad-box{min-height:250px;margin:0}
+
+    /* FOOTER */
+    footer{background:var(--header);color:#aab4bf;margin-top:50px}
+    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:30px;padding:44px 0}
+    @media(max-width:880px){.foot-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
+    footer h5{color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+    footer .logo{color:#fff;font-size:26px}
+    footer p{font-size:14px;line-height:1.7}
+    footer ul li{margin-bottom:9px}
+    footer ul a{font-size:14px}
+    footer ul a:hover{color:#fff}
+    .social{display:flex;gap:10px;margin-top:6px}
+    .social a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#dfe3e8;transition:.25s}
+    .social a:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
+    .social svg{width:17px;height:17px}
+    .foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding:16px 0;font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <span id="witaClock">Memuat waktu…</span>
+      <nav><a href="#">Redaksi</a><a href="#">Kontak</a><a href="#">Pedoman Media Siber</a></nav>
+    </div>
+  </div>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="container">
+      <a href="index.html" class="logo">Kabar<b>Bangsa</b></a>
+      <div class="ad-slot ad-leaderboard">Iklan · AdSense Ready (728×90)</div>
+    </div>
+  </header>
+
+  <!-- STICKY NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Nasional</a></li>
+        <li><a href="#">Politik</a></li>
+        <li><a href="kategori.html" class="active">Ekonomi</a></li>
+        <li><a href="#">Teknologi</a></li>
+        <li><a href="#">Olahraga</a></li>
+        <li><a href="#">Hiburan</a></li>
+        <li><a href="populer.html">Terpopuler</a></li>
+      </ul>
+      <div class="nav-tools">
+        <a href="pencarian.html" class="icon-btn" aria-label="Cari" title="Cari">🔍</a>
+        <button class="icon-btn" id="darkToggle" aria-label="Mode gelap" title="Mode Gelap">🌙</button>
+        <button class="icon-btn burger" id="burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="index.html">Home</a><span class="sep">›</span>
+      <span>Ekonomi</span>
+    </nav>
+
+    <!-- HEADER KATEGORI -->
+    <div class="cat-header">
+      <h1>📊 Ekonomi</h1>
+      <p>Update terkini seputar pasar, bisnis, UMKM, dan kebijakan ekonomi Indonesia</p>
+    </div>
+
+    <div class="ad-slot">Iklan · AdSense Ready (Responsive)</div>
+
+    <div class="layout">
+      <!-- DAFTAR BERITA KATEGORI -->
+      <section>
+        <article class="news-item">
+          <a href="artikel.html" class="thumb"><img src="https://picsum.photos/seed/eko1/600/338" alt="UMKM digital" loading="lazy"></a>
+          <div>
+            <span class="cat-label">Ekonomi</span>
+            <h3><a href="artikel.html">Transformasi Digital UMKM Tembus Pasar Global, Pemerintah Siapkan Insentif Baru</a></h3>
+            <p>Pemerintah menyiapkan insentif baru untuk mendorong transformasi digital UMKM agar mampu menembus pasar global.</p>
+            <span class="meta"><time class="timeago" datetime="2026-08-13T07:10:00+08:00">13 Agustus 2026</time></span>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <a href="#" class="thumb"><img src="https://picsum.photos/seed/eko2/600/338" alt="Rupiah menguat" loading="lazy"></a>
+          <div>
+            <span class="cat-label">Ekonomi</span>
+            <h3><a href="#">Rupiah Menguat ke Level Rp15.800, Analis Sebut Efek Data Inflasi</a></h3>
+            <p>Penguatan rupiah didorong data inflasi yang lebih rendah dari perkiraan serta masuknya aliran modal asing.</p>
+            <span class="meta"><time class="timeago" datetime="2026-08-12T22:15:00+08:00">12 Agustus 2026</time></span>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <a href="#" class="thumb"><img src="https://picsum.photos/seed/eko3/600/338" alt="Investasi hijau" loading="lazy"></a>
+          <div>
+            <span class="cat-label">Ekonomi</span>
+            <h3><a href="#">Investasi Hijau Jadi Magnet Baru Modal Asing di Asia Tenggara</a></h3>
+            <p>Sektor energi terbarukan dan ekonomi hijau menarik perhatian investor global untuk masuk ke kawasan ASEAN.</p>
+            <span class="meta"><time class="timeago" datetime="2026-08-12T14:00:00+08:00">12 Agustus 2026</time></span>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <a href="#" class="thumb"><img src="https://picsum.photos/seed/eko4/600/338" alt="Harga emas" loading="lazy"></a>
+          <div>
+            <span class="cat-label">Ekonomi</span>
+            <h3><a href="#">Harga Emas Hari Ini Tembus Rekor Baru</a></h3>
+            <p>Harga emas batangan kembali mencetak rekor tertinggi sepanjang masa. Analis memprediksi tren masih berlanjut.</p>
+            <span class="meta"><time class="timeago" datetime="2026-08-12T22:00:00+08:00">12 Agustus 2026</time></span>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <a href="#" class="thumb"><img src="https://picsum.photos/seed/eko5/600/338" alt="Ekspor Indonesia" loading="lazy"></a>
+          <div>
+            <span class="cat-label">Ekonomi</span>
+            <h3><a href="#">Ekspor Indonesia Semester I Tumbuh 12 Persen, Didorong Sektor Manufaktur</a></h3>
+            <p>Kinerja ekspor nasional menunjukkan tren positif dengan kontribusi terbesar dari sektor manufaktur dan komoditas olahan.</p>
+            <span class="meta"><time class="timeago" datetime="2026-08-11T18:30:00+08:00">11 Agustus 2026</time></span>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <a href="#" class="thumb"><img src="https://picsum.photos/seed/eko6/600/338" alt="Suku bunga BI" loading="lazy"></a>
+          <div>
+            <span class="cat-label">Ekonomi</span>
+            <h3><a href="#">Bank Indonesia Pertahankan Suku Bunga Acuan di Level 5,75 Persen</a></h3>
+            <p>Rapat Dewan Gubernur BI memutuskan mempertahankan suku bunga untuk menjaga stabilitas nilai tukar dan inflasi.</p>
+            <span class="meta"><time class="timeago" datetime="2026-08-11T10:00:00+08:00">11 Agustus 2026</time></span>
+          </div>
+        </article>
+
+        <div class="ad-slot">Iklan · AdSense Ready (In-Feed)</div>
+
+        <article class="news-item">
+          <a href="#" class="thumb"><img src="https://picsum.photos/seed/eko7/600/338" alt="Startup lokal" loading="lazy"></a>
+          <div>
+            <span class="cat-label">Ekonomi</span>
+            <h3><a href="#">Pendanaan Startup Lokal Tembus Rp 5 Triliun di Kuartal Kedua</a></h3>
+            <p>Ekosistem startup Indonesia terus tumbuh dengan aliran pendanaan yang meningkat signifikan dari investor domestik dan asing.</p>
+            <span class="meta"><time class="timeago" datetime="2026-08-10T16:45:00+08:00">10 Agustus 2026</time></span>
+          </div>
+        </article>
+
+        <!-- PAGINATION -->
+        <nav class="pagination" aria-label="Navigasi halaman">
+          <span class="current">1</span>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <span class="dots">…</span>
+          <a href="#">12</a>
+          <a href="#">→</a>
+        </nav>
+      </section>
+
+      <!-- SIDEBAR -->
+      <aside>
+        <div class="sidebar-inner">
+          <!-- KATEGORI LAIN -->
+          <div class="widget">
+            <h2 class="sec-title">Kategori Lain</h2>
+            <ul class="cat-list">
+              <li><a href="#">Nasional <span class="count">142</span></a></li>
+              <li><a href="#">Politik <span class="count">87</span></a></li>
+              <li><a href="#">Teknologi <span class="count">96</span></a></li>
+              <li><a href="#">Olahraga <span class="count">118</span></a></li>
+              <li><a href="#">Hiburan <span class="count">74</span></a></li>
+              <li><a href="#">Kesehatan <span class="count">63</span></a></li>
+              <li><a href="#">Pariwisata <span class="count">51</span></a></li>
+            </ul>
+          </div>
+
+          <!-- TERPOPULER -->
+          <div class="widget">
+            <h2 class="sec-title">🔥 Terpopuler <a href="populer.html">Lihat semua →</a></h2>
+            <div class="pop-item"><span class="pop-num">1</span><div><h4><a href="#">Cara Daftar Bantuan Subsidi Upah 2026, Cukup Lewat HP</a></h4><span class="meta">128.4 rb dibaca</span></div></div>
+            <div class="pop-item"><span class="pop-num">2</span><div><h4><a href="#">Jadwal Lengkap Liga Nusantara Pekan Ini</a></h4><span class="meta">96.1 rb dibaca</span></div></div>
+            <div class="pop-item"><span class="pop-num">3</span><div><h4><a href="#">Update Cuaca: BMKG Prediksi Hujan Lebat di 12 Wilayah</a></h4><span class="meta">87.3 rb dibaca</span></div></div>
+            <div class="pop-item"><span class="pop-num">4</span><div><h4><a href="#">Harga Emas Hari Ini Tembus Rekor Baru</a></h4><span class="meta">74.9 rb dibaca</span></div></div>
+            <div class="pop-item"><span class="pop-num">5</span><div><h4><a href="#">Resep Viral Kopi Susu Gula Aren ala Kafe Lokal</a></h4><span class="meta">61.2 rb dibaca</span></div></div>
+          </div>
+
+          <!-- IKLAN -->
+          <div class="widget"><div class="ad-slot ad-box">Iklan · 300×250</div></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div>
+          <a href="index.html" class="logo">Kabar<b>Bangsa</b></a>
+          <p style="margin-top:12px">Portal berita terkini yang menyajikan informasi cepat, akurat, dan berimbang untuk pembaca Indonesia.</p>
+        </div>
+        <div>
+          <h5>Kategori</h5>
+          <ul><li><a href="#">Nasional</a></li><li><a href="kategori.html">Ekonomi</a></li><li><a href="#">Teknologi</a></li><li><a href="#">Olahraga</a></li><li><a href="#">Hiburan</a></li></ul>
+        </div>
+        <div>
+          <h5>Halaman</h5>
+          <ul><li><a href="populer.html">Berita Terpopuler</a></li><li><a href="#">Tentang Kami</a></li><li><a href="#">Redaksi</a></li><li><a href="#">Kebijakan Privasi</a></li><li><a href="#">Pasang Iklan</a></li></ul>
+        </div>
+        <div>
+          <h5>Ikuti Kami</h5>
+          <div class="social">
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Kabar Bangsa. Seluruh hak cipta dilindungi.</span>
+        <span>Waktu server: WITA (GMT+8) · Semua fitur berjalan otomatis</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+  (function(){
+    var root = document.documentElement;
+    var saved = null;
+    try { saved = localStorage.getItem('kb-theme'); } catch(e){}
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === 'dark' || (!saved && prefersDark)) root.setAttribute('data-theme','dark');
+
+    var btn = document.getElementById('darkToggle');
+    function syncUI(){
+      var dark = root.getAttribute('data-theme') === 'dark';
+      var m = document.getElementById('themeColor');
+      if (m) m.content = dark ? '#0a0d11' : '#101418';
+      if (btn) btn.innerHTML = dark ? '☀️' : '🌙';
+    }
+    syncUI();
+    if (btn) btn.addEventListener('click', function(){
+      var dark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', dark ? 'light' : 'dark');
+      try { localStorage.setItem('kb-theme', dark ? 'light' : 'dark'); } catch(e){}
+      syncUI();
+    });
+
+    var clockEl = document.getElementById('witaClock');
+    function tick(){
+      if (!clockEl) return;
+      try {
+        var now = new Date();
+        var d = new Intl.DateTimeFormat('id-ID',{timeZone:'Asia/Makassar',weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(now);
+        var t = new Intl.DateTimeFormat('id-ID',{timeZone:'Asia/Makassar',hour:'2-digit',minute:'2-digit'}).format(now);
+        clockEl.textContent = d + ' • ' + t.replace('.',':') + ' WITA';
+      } catch(e){ clockEl.textContent = new Date().toLocaleString('id-ID'); }
+    }
+    tick(); setInterval(tick, 30000);
+
+    function timeAgo(iso){
+      var then = new Date(iso), diff = Math.floor((Date.now() - then.getTime()) / 1000);
+      if (diff < 60) return 'Baru saja';
+      var units = [['tahun',31536000],['bulan',2592000],['minggu',604800],['hari',86400],['jam',3600],['menit',60]];
+      for (var i = 0; i < units.length; i++){
+        var n = Math.floor(diff / units[i][1]);
+        if (n >= 1) return n + ' ' + units[i][0] + ' yang lalu';
+      }
+      return 'Baru saja';
+    }
+    var times = document.querySelectorAll('time.timeago');
+    for (var i = 0; i < times.length; i++){
+      var dt = times[i].getAttribute('datetime');
+      if (dt){ times[i].title = new Date(dt).toLocaleString('id-ID'); times[i].textContent = timeAgo(dt); }
+    }
+
+    var burger = document.getElementById('burger'), nav = document.getElementById('navMenu');
+    if (burger && nav) burger.addEventListener('click', function(){ nav.classList.toggle('open'); });
+  })();
+  </script>
+</body>
+</html>
